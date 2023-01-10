@@ -1,0 +1,12 @@
+.image-list {
+    margin-top: 20px;
+    columns: 350px 6;
+    gap: 10px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
