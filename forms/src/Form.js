@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-function Form() {
+const Form = () => {
 
     const inputName = useRef( null );
 
