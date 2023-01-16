@@ -1,4 +1,5 @@
 import './App.css';
+import UseContext from './components/UseContext/UseContext';
 import UseEffect from './components/UseEffect';
 import UseRef from './components/UseRef';
 
@@ -7,7 +8,8 @@ function App() {
     <div className="App">
       {/*<UseState />*/ }
       {/* <UseEffect /> */ }
-      <UseRef />
+      {/* <UseRef /> */ }
+      <UseContext />
     </div>
   );
 }

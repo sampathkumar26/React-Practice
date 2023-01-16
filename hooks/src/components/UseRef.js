@@ -14,7 +14,7 @@ function UseRef() {
 
     return (
         <div>
-            <Input placeholder="Basic usage" style={ { height: 60 } } ref={ inputName } />
+            <Input placeholder="Name" style={ { height: 60 } } ref={ inputName } />
             <h1>My name is { name }</h1>
             <Button onClick={ displayName }>Click</Button>
         </div>
