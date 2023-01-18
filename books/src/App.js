@@ -1,36 +1,48 @@
+import 'bulma/css/bulma.min.css';
 import { useState } from 'react';
-import BookCreate from './components/BookCreate';
 import './App.css';
-import 'bulma/css/bulma.min.css'
+import BookCreate from './components/BookCreate';
+import BookList from './components/BookList';
 
 function App() {
 
   const [ books, setBooks ] = useState( [] );
 
+  function deleteBookById( id ) {
+    const updatedBooks = books.filter( ( book ) => {
+      return book.id !== id;
+    } )
+
+    setBooks( updatedBooks )
+  }
+
   function createBook( title ) {
     const updatedBooks = [
-      ...books,
-      {
-        id: '112',
-        title: title
+      ...books, {
+        id: Math.round( Math.random() * 9999 ),
+        title
       }
     ];
 
     setBooks( updatedBooks );
-    console.log( books );
   }
 
-  function editBook() {
+  function editBookById( id, newTitle ) {
+    const updatedBooks = books.map( ( book ) => {
+      if ( book.id === id ) {
+        return { ...book, title: newTitle };
+      }
+      return book
+    } )
 
-  }
-
-  function deleteBook() {
-
+    setBooks( updatedBooks );
   }
 
   return (
-    <div className="App">
-      <h1 className='m-5 is-size-1'>Books Application</h1>
+    <div className="app">
+      <h1 className='has-text-centered'>Books Application</h1>
+      <h1>Reading List</h1>
+      <BookList books={ books } onEdit={ editBookById } onDelete={ deleteBookById } />
       <BookCreate onCreate={ createBook } />
     </div>
   );

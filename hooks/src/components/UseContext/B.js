@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { data } from './UseContext'
+import React, { useContext } from 'react';
+import { data } from './UseContext';
 
 function B() {
     const name = useContext( data );
@@ -7,5 +7,7 @@ function B() {
         <div>My name is { name }</div>
     )
 }
+
+
 
 export default B
